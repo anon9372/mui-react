@@ -5,6 +5,7 @@ import '../src/styles/index.css'
 import Home from "./pages/home";
 import Tour from "./pages/tour"
 import SearchAppBar from './components/appBar';
+import Form from './pages/form';
 function App() {
   return (
     <>
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/:id' element={<Tour />} />
+          <Route exact path='/add' element={<Form />} />
         </Routes>
       </Router>
     </>

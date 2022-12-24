@@ -1,8 +1,6 @@
 import TourCard from "../components/tourCard";
 import { Grid, Container, Typography } from "@mui/material";
-import SearchAppBar from '../components/appBar'
 import cities from '../data/data.json'
-import { Link } from 'react-router-dom'
 
 function Home() {
     return (
