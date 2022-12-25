@@ -1,5 +1,5 @@
 import React from 'react'
-import { Paper, Grid, Typography, Box, Rating, createTheme, ThemeProvider } from '@mui/material';
+import { Paper, Grid, Typography, Box, Rating } from '@mui/material';
 import { AccessTime } from '@mui/icons-material'
 import { useStyles } from "../styles/style";
 
@@ -10,6 +10,7 @@ const TourCard = ({ tour }) => {
     return (
         <Grid item xs={3}>
             <Paper elevation={3}>
+                {/* eslint-disable-next-line */}
                 <img src={tour.image} alt='image' className='img' />
                 <Box paddingX={1}>
                     <Typography variant='subtitle1' component={'h2'}>

@@ -1,10 +1,13 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import { Container, Button, Box } from '@material-ui/core';
+import { Container, Button, Box, Typography } from '@material-ui/core';
 import { useStyles } from '../styles/style';
-
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../auth';
 const Form = () => {
     const classes = useStyles()
+    const navigate = useNavigate()
+    const auth = useAuth()
     const formik = useFormik({
         initialValues: {
             locationName: '',
@@ -17,9 +20,17 @@ const Form = () => {
             console.log(JSON.stringify(values, null, 2))
         },
     });
+
+    const handleLogout = () => {
+        auth.logout()
+        navigate('/')
+    }
     return (
         <Container>
             <form onSubmit={formik.handleSubmit}>
+                <Typography>
+                    Welcome {auth.user}
+                </Typography>
                 <div>
                     <label htmlFor="locationName">Location Name</label>
                     <input
@@ -78,7 +89,7 @@ const Form = () => {
                 </div>
                 <Box sx={{ display: 'flex', gap: '10px' }}>
                     <Button variant="contained" color='primary' type='submit'>Submit</Button>
-                    <Button variant="outlined">Back</Button>
+                    <Button variant="outlined" onClick={handleLogout}>Logout</Button>
                 </Box>
 
             </form>

@@ -33,7 +33,19 @@ export const useStyles = makeStyles((theme) => ({
         padding: 10,
         marginTop: 10,
         margin: 10
+    },
+    loginPage: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: '100px'
+    },
+    loginButtons: {
+        display: 'flex',
+        padding: '5px',
+        gap: '10px'
     }
+
 }
 
 ))

@@ -13,7 +13,7 @@ const Tour = () => {
                     Explore the world in Las Vagas!
                 </Typography>
                 <Box marginTop={3} marginBottom={10} className={classes.imageContainer}>
-                    <img src='https://media.istockphoto.com/id/954500850/photo/las-vegas.jpg?b=1&s=170667a&w=0&k=20&c=5NLBTRESPyyyujydMuH64L4uPwpjACpp_NIgQdJp_eg=' alt='main-image' height={425} />
+                    <img src='https://media.istockphoto.com/id/954500850/photo/las-vegas.jpg?b=1&s=170667a&w=0&k=20&c=5NLBTRESPyyyujydMuH64L4uPwpjACpp_NIgQdJp_eg=' alt='main' height={425} />
                     <ImageCollage />
                 </Box>
                 <Typography variant='h6' component={'h4'} className={classes.tourFooter}>
