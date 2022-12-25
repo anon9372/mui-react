@@ -3,7 +3,8 @@ import { useAuth } from '../auth'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Container, Box, Typography } from '@material-ui/core'
 import { useStyles } from '../styles/style'
-const Login = () => {
+import { replace } from 'formik'
+const Register = () => {
 
     const [user, setUser] = useState('')
     const auth = useAuth()
@@ -14,8 +15,8 @@ const Login = () => {
     const redirectPath = location.state?.path || '/'
 
     const handleLogin = () => {
-        auth.login(user)
-        navigate(redirectPath, { replace: true })
+        auth.login(null)
+        navigate('/login')
     }
 
     const handleGoback = () => {
@@ -24,12 +25,11 @@ const Login = () => {
     }
 
     const handleRegister = () => {
-        auth.login(null)
-        navigate('/register')
+
     }
     return (
         <Container>
-            <Typography className={classes.loginPage} variant='h3'>Login Page</Typography>
+            <Typography className={classes.loginPage} variant='h3'>Register Page</Typography>
             <Box className={classes.loginPage}>
                 <label>
                     Username: <input type='text' onChange={e => { setUser(e.target.value); console.log('e', e.target.value) }} />
@@ -38,16 +38,16 @@ const Login = () => {
                     Password: <input type='password' onChange={e => setUser(e.target.value)} />
                 </label>
                 <Box className={classes.loginButtons}>
-                    <button onClick={handleLogin}>
-                        Login
+                    <button onClick={handleRegister}>
+                        Register
                     </button>
                     <button onClick={handleGoback}>
                         Go Back
                     </button>
                 </Box>
-                <Box>
-                    <button onClick={handleRegister}>
-                        Register
+                <Box className={classes.loginButtons}>
+                    <button onClick={handleLogin}>
+                        Login
                     </button>
                 </Box>
 
@@ -56,4 +56,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Register

@@ -8,6 +8,7 @@ import SearchAppBar from './components/appBar';
 import Form from './pages/form';
 import { AuthProvider } from './auth';
 import Login from './pages/login';
+import Register from './pages/register';
 import RequireAuth from './components/requireAuth';
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/:id' element={<Tour />} />
           <Route path='/add' element={<RequireAuth> <Form /></RequireAuth>} />
           <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
       </Router>
     </AuthProvider>
